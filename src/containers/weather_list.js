@@ -1,39 +1,35 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import TableRow from '../components/table-row';
 
+import '../style/weatherList.css';
 
 class WeatherList extends Component {
-  renderWeather(cityData){
-    return(
-      <tr key={cityData.city.name}>
-        <td>
-          {cityData.city.name}
-        </td>
-      </tr>
-    )
-  }
-
   render(){
     return(
-      <table className="table table-hover">
-        <thead>
+      <table className="table table-striped table-bordered">
+        <thead className="thead-dark">
           <tr>
-            <th>
+            <th scope="col">
               City
             </th>
-            <th>
-              Temperature
+            <th scope="col">
+              Five Day Forecast (&deg;F)
             </th>
-            <th>
-              Pressure
+            <th scope="col">
+              Pressure (hPa)
             </th>
-            <th>
-              Humidity
+            <th scope="col">
+              Humidity (&#37;)
             </th>
           </tr>
         </thead>
         <tbody>
-          {this.props.weather.map(this.renderWeather)}
+          {this.props.weather.map((cityData) => {
+            return(
+              <TableRow key={cityData.city.name} cityData={cityData} />
+            )
+          })}
         </tbody>
       </table>
     )

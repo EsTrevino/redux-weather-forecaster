@@ -1,0 +1,34 @@
+.graph{
+  float:left;
+
+}
+
+.graph-container{
+  width:30%;
+}
+
+th{
+  text-align: center;
+}
+
+.table{
+  margin-top:20px;
+}
+
+
+tbody{
+  text-align:center;
+}
+
+.city-name{
+  width: 500px;
+}
+
+td:first-of-type, td:first-of-type > div{
+  height: 200px;
+  width:250px;
+}
+
+.input-group{
+  margin-top: 20px;
+}
